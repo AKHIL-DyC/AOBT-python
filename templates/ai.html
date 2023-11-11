@@ -8,7 +8,7 @@
       * {
         margin: 0;
         padding: 0;
-        font-family: Arial;
+        font-family: Trebuchet MS;
         box-sizing: border-box;
       }
       @font-face {
@@ -25,10 +25,9 @@
       }
       #left h1 {
         font-family: nothing;
-        background-image: linear-gradient(red, rgb(255, 255, 255));
+        background-color: yellow;
         -webkit-background-clip: text;
         color: transparent;
-        /* color: white; */
         font-size: 4rem;
         writing-mode: vertical-lr;
         text-orientation: upright;
@@ -36,6 +35,7 @@
       }
       html,
       body {
+        color: white;
         width: 100%;
         height: 100%;
       }
@@ -46,7 +46,6 @@
         border: none;
         border-top: 1px solid rgb(154, 149, 149);
         font-size: 1.5rem;
-        background-image: linear-gradient(red, rgb(255, 255, 255));
         -webkit-background-clip: text;
         color: transparent;
       }
@@ -61,16 +60,16 @@
         justify-content: center;
         align-items: center;
         width: 20vw;
-        background-color: rgb(16, 16, 16);
+        background-color: black;
         height: inherit;
         border-right: 1px solid rgb(153, 148, 148);
       }
 
       #right {
         font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(rgb(193, 72, 72), rgb(190, 229, 190));
         font-family: nothing;
-        background: radial-gradient(rgb(87, 84, 84), rgb(19, 20, 19));
+        background-color: #efe6d5;
+        
         justify-content: center;
         align-items: center;
         width: 80vw;
@@ -80,25 +79,21 @@
         gap: 2vh;
       }
       #head {
-        background-color: rgb(122, 118, 118);
-        background-color: rgb(43, 40, 40);
+       background-color: #f6806c;
         box-shadow: 0 0 10px black;
         width: 50vw;
         height: 10vh;
         border-radius: 20px;
       }
       #question {
-        /* background-color: rgb(50, 50, 53); */
-        background-color: rgb(193, 72, 72);
-        background-color: rgb(43, 40, 40);
+        background-color: rgb(137, 139, 141);
         box-shadow: 0 0 10px black;
         height: 30vh;
         width: 50vw;
         border-radius: 20px;
       }
       #answer {
-        background-color: rgb(190, 229, 190);
-        background-color: rgb(43, 40, 40);
+       background-color: #9dbeb7;
         box-shadow: 0 0 10px black;
         height: 70vh;
         width: 70vw;
@@ -107,7 +102,7 @@
       .logo {
         width: 100px;
         height: 100px;
-        background: white;
+        background: black;
         display: grid;
         place-content: center;
         grid-template-columns: repeat(5, 10px);
@@ -118,24 +113,23 @@
     <div id="main">
       <div id="left">
         <h1>AOBT</h1>
-        <button onclick="reloadPage()">Reload Page</button>
+        <button onclick="reloadPage()">New Query</button>
 
         <script>
           function reloadPage() {
-            // Use JavaScript to reload the page
             location.reload();
           }
         </script>
       </div>
       <div id="right">
         <div id="head">
-          <h1>{{speak}}</h1>
+          <h1>{{Listening right now...}}</h1>
         </div>
         <div id="question">
-          <h1>{{question}}</h1>
+          <h1>{{Ask a question:}}</h1>
         </div>
         <div id="answer">
-          <h1>{{answer}}</h1>
+          <h1>{{AI generated reply:}}</h1>
         </div>
       </div>
     </div>
