@@ -29,7 +29,9 @@
         background-color: rgb(16, 16, 16);
         height: inherit;
         border-right: 1px solid rgb(153, 148, 148);
+        text-orientation: upright;
       }
+      
       #right {
         font-family: Arial, Helvetica, sans-serif;
         background: linear-gradient(rgb(193, 72, 72), rgb(190, 229, 190));
@@ -72,7 +74,17 @@
   </head>
   <body>
     <div id="main">
-      <div id="left"></div>
+      <div id="left">
+        <h1>AOBT</h1>
+        <button onclick="reloadPage()">Reload Page</button>
+
+        <script>
+            function reloadPage() {
+                // Use JavaScript to reload the page
+                location.reload();
+            }
+        </script>
+      </div>
       <div id="right">
         <div id="head">
           <h1>{{speak}}</h1>
