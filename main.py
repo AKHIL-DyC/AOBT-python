@@ -6,11 +6,15 @@ from dotenv import load_dotenv
 import speech_recognition as sr
 import pyttsx3
 import threading
-#test
+
 app = Flask(__name__)
 
 @app.route("/")
-def index():
+def home():
+    return render_template('index.html')
+
+@app.route("/ai")
+def ai():
     load_dotenv()
 
     api = os.getenv("API_KEY")
@@ -19,14 +23,14 @@ def index():
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
         print("Speak something...")
-        speak="I am listening"
+        speak = "I am listening"
         recognizer.adjust_for_ambient_noise(source)
         audio = recognizer.listen(source, timeout=5)
 
     try:
         text = recognizer.recognize_google(audio)
         print("You said: " + text)
-        question=text
+        question = text
     except sr.UnknownValueError:
         print("Sorry, I could not understand what you said.")
     except sr.RequestError as e:
@@ -37,11 +41,9 @@ def index():
     answer = llm.predict(text)
     print(answer)
 
-    
     threading.Thread(target=tts, args=(answer,)).start()
 
-    
-    return render_template('index.html',answer=answer,question=question,speak=speak)
+    return render_template('ai.html', answer=answer, question=question, speak=speak)
 
 def tts(text):
     engine = pyttsx3.init(driverName='sapi5')
@@ -54,3 +56,4 @@ def tts(text):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
