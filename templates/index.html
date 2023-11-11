@@ -1,101 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}>
     <title>Document</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        font-family: Arial;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-      }
-      #main {
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-      }
-      #left {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 20vw;
-        background-color: rgb(16, 16, 16);
-        height: inherit;
-        border-right: 1px solid rgb(153, 148, 148);
-        text-orientation: upright;
-      }
-      
-      #right {
-        font-family: Arial, Helvetica, sans-serif;
-        background: linear-gradient(rgb(193, 72, 72), rgb(190, 229, 190));
-        justify-content: center;
-        align-items: center;
-        width: 80vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        gap: 2vh;
-      }
-      #head {
-        background-color: rgb(122, 118, 118);
-        width: 50vw;
-        height: 10vh;
-        border-radius: 20px;
-      }
-      #question {
-        /* background-color: rgb(50, 50, 53); */
-        background-color: rgb(193, 72, 72);
-        height: 30vh;
-        width: 50vw;
-        border-radius: 20px;
-      }
-      #answer {
-        background-color: rgb(190, 229, 190);
-        height: 70vh;
-        width: 70vw;
-        border-radius: 20px;
-      }
-      .logo {
-        width: 100px;
-        height: 100px;
-        background: white;
-        display: grid;
-        place-content: center;
-        grid-template-columns: repeat(5, 10px);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="main">
-      <div id="left">
-        <h1>AOBT</h1>
-        <button onclick="reloadPage()">Reload Page</button>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
 
-        <script>
-            function reloadPage() {
-                // Use JavaScript to reload the page
-                location.reload();
-            }
-        </script>
-      </div>
-      <div id="right">
-        <div id="head">
-          <h1>{{speak}}</h1>
+<body>
+    <header class="navbar">
+        <h1>AudioBot</h1>
+        <h5>login</h5>
+        <h5>chatbot</h5>
+        <h5>ai</h5>
+        <!-- <div id="line"></div> -->
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/ESPN_logos.png" alt=""> -->
+        <!-- <div id="line"></div> -->
+        <h5>about</h5>
+        <h5>contact</h5>
+    </header>
+
+    <main>
+        <!-- all the content for the website -->
+    </main>
+
+    <footer>
+        <!--  -->
+    </footer>
+    <div id="main">
+        <div id="content">
+            <div id="left">
+                <div id="h1">AOBT: From Spoken<span> Words </span>to Infinite<span> Worlds</span>.</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia sunt ex animi laborum dicta sit minus delectus et pariatur.</p>
+
+                <div class="wrapper">
+                    <a href="#"><span>Call AOBT! <i class="ri-customer-service-2-line"></i></span></a>
+                </div>
+            </div>
+            <div id="center">
+                <div id="center-bg">
+                    <img src="aakash.jpg" alt="picture here">
+                </div>
+            </div>
+            <div id="right"></div>
         </div>
-        <div id="question">
-          <h1>{{question}}</h1>
-        </div>
-        <div id="answer">
-          <h1>{{answer}}</h1>
-        </div>
-      </div>
     </div>
-  </body>
+    
+</body>
 </html>
