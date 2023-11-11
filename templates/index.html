@@ -1,391 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            color: white;
-        }
-        
-        html,body{
-        
-            width: 100%;
-            height: 100%;
-        }
-        
-        @font-face{
-            font-family: google;
-            src:url(/AOBT-python/google.ttf);
-        }
-        
-        @font-face{
-            font-family: monument;
-            src:url(/AOBT-python/monument.ttf);
-        }
-        
-        @font-face{
-            font-family: googlebold;
-            src:url(/AOBT-python/googlebold.ttf);
-        }
-        
-        @font-face{
-            font-family: nothing;
-            src:url("/AOBT-python/nothing.ttf");
-        }
-        
-        
-        #main{
-            height: 100%;
-            width: 100%;
-            background-color: black;
-        }
-        
-        /* vinay's changes */
-        .navbar{
-            height:15vh;
-            width:100%;
-            padding: 0 8px;
-            background:#1e1d1d;
-            position:fixed;
-            overflow: hidden;
-            display:flex;
-            justify-content:space-between;
-            align-items: center; 
-        }
-        .navbar h1{
-            font-family: nothing;
-            font-size:4rem;
-        }
-        .navbar img{
-            height:70px;
-        }
-        .navbar h5{
-            font-family: googlebold;
-            text-align: center;
-            font-size:2.5rem;
-            background: #141414;
-            width:12rem;
-            aspect-ratio: 2;
-            padding:10px;
-            border-radius:1rem;
-        }
-        .navbar h5:hover{
-            background:#fff;
-            color:black;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 8px;
-        }
-        
-        
-        /* making responsive */
-        
-        @media (max-width:1956px){
-            .navbar{
-                height:13vh;
-            }
-            .navbar h5{
-                width:8rem;
-                font-size:2rem;
-            }
-            .navbar h1{
-                font-size:3.5rem;
-            }
-        }
-        @media (max-width:1316px){
-            .navbar {
-                height:11vh;
-            }
-            .navbar h5{
-                width:6rem;
-                font-size:1.5rem;
-            }
-            .navbar h1{
-                font-size:3rem;
-            }
-        }
-        @media (max-width:1024px){
-            .navbar{
-                height:9vh;
-            }
-            .navbar h5{
-                width:4rem;
-                font-size:1rem;
-            }
-            .navbar h1{
-                font-size:2.5rem;
-            }
-            #center{
-                opacity:0;
-            }    
-        }
-        @media (max-width:768px){
-            .navbar{
-                height:7vh;
-            }
-            .navbar h5{
-                width:4rem;
-                font-size:1rem;
-            }
-            .navbar h1{
-                font-size:2rem;
-            }
-        }
-        @media (max-width:620px){
-            .navbar{
-                height:6vh;
-            }
-            .navbar h5{
-                width:3.6rem;
-                font-size:0.7rem;
-            }
-            .navbar h1{
-                font: size 1.6rem;
-            }
-        }
-        @media (max-width:430px){
-            .navbar{
-                height: 5vh;
-                gap:0.3em;
-            }
-            .navbar h5{
-                width:3.5rem;
-                font-size:0.6rem;
-            }
-            .navbar h1{
-                font-size:1.5rem;
-            }
-        }
-        
-        /* end changes */
-        
-        #nav{
-        
-            height: 100px;
-            width: 100%;
-            /* background-color: red; */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8px;
-        
-        }
-        
-        #nav h1{
-        
-            font-size: 25px;
-            display: flex;
-            font-family: monument;
-        
-        }
-        
-        #nav i{
-        
-            font-size: 25px;
-            margin-right: 5px;
-        }
-        
-        #nav h5{
-        
-            font-size: 15px;
-            font-weight: 500;
-        
-        }
-        
-        #nav img{
-            height: 70px;
-        }
-        
-        
-        
-        #line{
-            width: 90px;
-            height: 2px;
-            background-color: red;
-        }
-        
-        #content{
-            height: 86.73%;
-            width: 100vw;
-            /* background-color: violet; */
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        #left{
-        
-            width: 47vw;
-            height: 100%;
-            /* background-color: red; */
-            padding: 70px 70px;
-        }
-        
-        #right{
-            width: 15vw;
-            height: 100%;
-            /* background-color: red; */
-        }
-        
-        #center{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 30vw;
-            height: 100%;
-            background-color: yellow;
-            overflow: hidden;
-            padding-top: 30px;
-        }
-        
-        #left div#h1{
-            font-family: nothing;
-            width: 45vw;
-            font-size: 60px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            margin-top: 90px;
-            
-        }
-        
-        #left div#h1 span{
-            color: red;
-            font-family: nothing;
-            font-weight: 500;
-        }
-        
-        #left p{
-            font-size: 20px;
-            width: 80%;
-            margin-top: 40px;
-            margin-bottom: 10px;
-        
-        }
-        
-        #left button{
-        
-            background-color: red;
-            margin-top: 50px;
-            padding: 14px 32px;
-            border-radius: 15px;
-            font-size: 17px;
-            display: flex;
-            align-items: center;
-            font-weight: 100;
-        
-        }
-        
-        #left button i{
-            margin-right: 10px;
-        }
-        
-        #center-bg{
-            background-color: blue;
-            height:inherit;
-            width:29vw;
-            border-top-left-radius: 1000px;
-            border-top-right-radius: 1000px;
-        }
-        
-        
-        
-        .wrapper{
-            position: fixed;
-            top: 80%;
-            right: 78%;
-            transform: translate(-50%, -50%);
-            border-radius: 10px;
-          }
-          
-          a{
-            display: block;
-            width: 180px;
-            height: 40px;
-            line-height: 40px;
-            font-size: 17px;
-            font-family: monument;
-            text-decoration: none;
-            color: #333;
-            border: 2px solid #333;
-            letter-spacing: 2px;
-            text-align: center;
-            position: relative;
-            transition: all .35s;
-          }
-          
-          a span{
-            position: relative;
-            z-index: 2;
-          }
-          
-          a:after{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background: red;
-            transition: all .35s;
-          }
-          
-          a:hover{
-            color: white;
-          }
-          
-          a:hover:after{  
-            width: 100%;
-          }
-        
-          
-    </style>
-    
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-</head>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        color: white;
+      }
 
-<body>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        /* background-image: url(braile2.png); */
+      }
+
+      @font-face {
+        font-family: google;
+        src: url(/AOBT-python/google.ttf);
+      }
+
+      @font-face {
+        font-family: monument;
+        src: url(/AOBT-python/monument.ttf);
+      }
+
+      @font-face {
+        font-family: googlebold;
+        src: url(/AOBT-python/googlebold.ttf);
+      }
+
+      @font-face {
+        font-family: nothing;
+        src: url("/AOBT-python/nothing.ttf");
+      }
+
+      #main {
+        height: 100%;
+        width: 65vw;
+        background-image: url(images/braile2.png);
+      }
+
+      /* vinay's changes */
+      .navbar {
+        height: 15vh;
+        width: 100%;
+        padding: 0 8px;
+        background: #1e1d1d;
+        background: linear-gradient(#1e1d1d, #363434);
+        position: fixed;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        z-index: 2;
+      }
+      .navbar h1 {
+        font-family: nothing;
+        font-size: 4rem;
+      }
+      .navbar img {
+        height: 70px;
+      }
+      .navbar h5 {
+        font-family: googlebold;
+        text-align: center;
+        font-size: 2.5rem;
+        width: 12rem;
+        aspect-ratio: 2;
+        padding: 10px;
+        border-right: 1px solid #5e5e5e;
+        border-left: 1px solid #5e5e5e;
+      }
+      .navbar h5:hover {
+        background: #1c1b1b;
+      }
+
+      /* making responsive */
+
+      @media (max-width: 1956px) {
+        .navbar {
+          height: 13vh;
+        }
+        .navbar h5 {
+          width: 8rem;
+          font-size: 2rem;
+        }
+        .navbar h1 {
+          font-size: 3.5rem;
+        }
+      }
+      @media (max-width: 1316px) {
+        .navbar {
+          height: 11vh;
+        }
+        .navbar h5 {
+          width: 6rem;
+          font-size: 1.5rem;
+        }
+        .navbar h1 {
+          font-size: 3rem;
+        }
+      }
+      @media (max-width: 1024px) {
+        .navbar {
+          height: 9vh;
+        }
+        .navbar h5 {
+          width: 4rem;
+          font-size: 1rem;
+        }
+        .navbar h1 {
+          font-size: 2.5rem;
+        }
+        #center {
+          opacity: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        .navbar {
+          height: 7vh;
+        }
+        .navbar h5 {
+          width: 4rem;
+          font-size: 1rem;
+        }
+        .navbar h1 {
+          font-size: 2rem;
+        }
+      }
+      @media (max-width: 620px) {
+        .navbar {
+          height: 6vh;
+        }
+        .navbar h5 {
+          width: 3.6rem;
+          font-size: 0.7rem;
+        }
+        .navbar h1 {
+          font: size 1.6rem;
+        }
+      }
+      @media (max-width: 430px) {
+        .navbar {
+          height: 5vh;
+          gap: 0.3em;
+        }
+        .navbar h5 {
+          width: 3.5rem;
+          font-size: 0.6rem;
+        }
+        .navbar h1 {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* end changes */
+      img {
+        object-fit: cover;
+      }
+      #nav {
+        height: 100px;
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8px;
+      }
+
+      #nav h1 {
+        font-size: 25px;
+        display: flex;
+        font-family: monument;
+      }
+
+      #nav i {
+        font-size: 25px;
+        margin-right: 5px;
+      }
+
+      #nav h5 {
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      #nav img {
+        height: 70px;
+      }
+
+      #line {
+        width: 90px;
+        height: 2px;
+        background-color: red;
+      }
+
+      #content {
+        height: 86.73%;
+        width: 100vw;
+        /* background-color: violet; */
+        display: flex;
+        justify-content: space-between;
+      }
+
+      #left {
+        width: 69vw;
+        height: 100%;
+        /* background-color: red; */
+        padding: 70px 70px;
+      }
+
+      #center {
+        /* padding-left: 10vw; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        height: 100vh;
+        padding-top: 10vh;
+
+        overflow: hidden;
+        padding-top: 30px;
+      }
+
+      #left div#h1 {
+        font-family: nothing;
+        width: 45vw;
+        font-size: 60px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        margin-top: 90px;
+      }
+
+      #left div#h1 span {
+        color: red;
+        font-family: nothing;
+        font-weight: 500;
+      }
+
+      #left p {
+        font-size: 20px;
+        width: 80%;
+        margin-top: 40px;
+        margin-bottom: 10px;
+      }
+
+      #left button {
+        background-color: red;
+        margin-left: -80px;
+        margin-top: 50px;
+        padding: 14px 32px;
+        border-radius: 15px;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        font-weight: 100;
+      }
+
+      #left button i {
+        margin-right: 10px;
+      }
+
+      #center-bg {
+        background-color: blue;
+        height: inherit;
+        width: 29vw;
+        border-top-left-radius: 1000px;
+        border-top-right-radius: 1000px;
+      }
+
+      .wrapper {
+        position: fixed;
+        top: 80%;
+        right: 78%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+      }
+
+      a {
+        display: block;
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 17px;
+        font-family: monument;
+        text-decoration: none;
+        color: #333;
+        border: 2px solid #333;
+        letter-spacing: 2px;
+        text-align: center;
+        position: relative;
+        transition: all 0.35s;
+      }
+
+      a span {
+        position: relative;
+        z-index: 2;
+      }
+
+      a:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background: red;
+        transition: all 0.35s;
+      }
+
+      a:hover {
+        color: white;
+      }
+
+      a:hover:after {
+        width: 100%;
+      }
+    </style>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
     <header class="navbar">
-        <h1>AudioBot</h1>
-        <h5>login</h5>
-        <h5>chatbot</h5>
-        <h5>NEWS</h5>
-        <!-- <div id="line"></div> -->
-        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/ESPN_logos.png" alt=""> -->
-        <!-- <div id="line"></div> -->
-        <h5>about</h5>
-        <h5>contact</h5>
+      <h1>AudioBot</h1>
+      <h5>login</h5>
+      <h5>chatbot</h5>
+      <h5>NEWS</h5>
+      <!-- <div id="line"></div> -->
+      <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/ESPN_logos.png" alt=""> -->
+      <!-- <div id="line"></div> -->
+      <h5>about</h5>
+      <h5>contact</h5>
     </header>
 
     <main>
-        <!-- all the content for the website -->
+      <!-- all the content for the website -->
     </main>
 
     <footer>
-        <!--  -->
+      <!--  -->
     </footer>
     <div id="main">
-        <div id="content">
-            <div id="left">
-                <div id="h1">AOBT: From Spoken<span> Words </span>to Infinite<span> Worlds</span>.</div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia sunt ex animi laborum dicta sit minus delectus et pariatur.</p>
+      <div id="content">
+        <div id="left">
+          <div id="h1">
+            AOBT: From Spoken<span> Words </span>to Infinite<span> Worlds</span
+            >.
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia
+            sunt ex animi laborum dicta sit minus delectus et pariatur.
+          </p>
 
-                <div class="wrapper">
-                    <form method="post" action="{{ url_for('loading') }}">
-                        <!-- Your form elements go here -->
-                        <button type="submit">CALL AOBT</button>
-                    </form>
-                </div>
-            </div>
-            <div id="center">
-                <div id="center-bg">
-                    <img src="/AOBT-python/static/blindmanequin.png" alt="picture here">
-                </div>
-            </div>
-            <div id="right"></div>
+          <div class="wrapper">
+            <form method="post" action="{{ url_for('loading') }}">
+              <!-- Your form elements go here -->
+              <button type="submit">CALL AOBT</button>
+            </form>
+          </div>
         </div>
+        <div id="center">
+          <img src="images/blindmanequin.png" alt="picture here" />
+        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
