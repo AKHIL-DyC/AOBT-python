@@ -1,21 +1,35 @@
-from flask import Flask, render_template
+from flask import Flask,session, request, render_template
+from flask_session import Session
 from langchain.llms import OpenAI
 import openai
 import os
+import time
 from dotenv import load_dotenv
 import speech_recognition as sr
 import pyttsx3
 import threading
 
 app = Flask(__name__)
+app.config["SESSION_TYPE"]="filesystem"
 
+Session(app)
+def slow_loading_function():
+    """Simulates a time consuming process (wait 10 seconds and return a reversed string)"""
+    time.sleep(1)
 @app.route("/")
 def home():
     return render_template('index.html')
-
+@app.route("/loading", methods=["POST"])
+def loading():
+    if request.method == "POST":
+        # We'll use a session object to save the data sent by the user for processing
+        #session["user_data"] = request.form.get("user_data")
+        return render_template("loading.html")
+    
 @app.route("/ai")
 def ai():
-    load_dotenv()
+    # Finally, use the user data in some intensive process
+    slow_loading_function()
 
     api = os.getenv("API_KEY")
     print(api)

@@ -372,7 +372,10 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia sunt ex animi laborum dicta sit minus delectus et pariatur.</p>
 
                 <div class="wrapper">
-                    <a href="#"><span>Call AOBT! <i class="ri-customer-service-2-line"></i></span></a>
+                    <form method="post" action="{{ url_for('loading') }}">
+                        <!-- Your form elements go here -->
+                        <button type="submit">CALL AOBT</button>
+                    </form>
                 </div>
             </div>
             <div id="center">
