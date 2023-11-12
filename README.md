@@ -15,31 +15,28 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd AOBT-python
 ```
 
 Install dependencies
 
 ```bash
-  npm install
+  pip install flask,openai.langchain
 ```
 
-Start the server
 
 ```bash
-  npm run start
+ pip install pyttsx3,threading,time
 ```
 
-
-## Deployment
-
-The following pip commands are required to run the project:
 
 ```bash
-  pip install flask
-  pip install openai
-  pip install pyttsx3
-  pip install langchain
-  pip install threading
+  pip intall python-dotenv
 ```
+```bash
+ pip install
+pip install requests
+```
+##run main.py
+
 
