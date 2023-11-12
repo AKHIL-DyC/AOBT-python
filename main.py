@@ -1,4 +1,4 @@
-from flask import Flask, session, request, render_template
+from flask import Flask, session, request, render_template,url_for
 from flask_session import Session
 from langchain.llms import OpenAI
 import openai
@@ -11,9 +11,11 @@ import threading
 import keyboard
 import requests
 import pythoncom
+
 flag = 0
 app = Flask(__name__)
 app.config["SESSION_TYPE"] = "filesystem"
+
 Session(app)
 
 def ttse(text):
@@ -31,8 +33,10 @@ def slow_loading_function():
 
 
 @app.route("/")
+
 def home():
-    return render_template('index.html')
+    font_url = url_for('static', filename='fonts/nothing.ttf')
+    return render_template('index.html',nothing=font_url)
 
 
 @app.route("/loading", methods=["POST"])

@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
 </head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(rgb(53, 51, 51),rgb(16, 16, 16));
+        letter-spacing:2px;
+        line-height: -20px;
+    }
+    div{
+        width: 50vw;
+        height:80vh;
+        display: flex;
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+</style>
 <body>
-
-<h1>News Articles</h1>
-
-<h2>{{news}}</h2>
+<div>
+    <h1>News Articles</h1>
+    <h2>{{news}}</h2>
+</div>
 
 </body>
 </html>

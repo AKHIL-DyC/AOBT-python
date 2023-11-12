@@ -6,6 +6,7 @@
     <title>Document</title>
     <style>
       * {
+        background-color: #333;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -21,28 +22,29 @@
 
       @font-face {
         font-family: google;
-        src: url(/AOBT-python/google.ttf);
+        src: url(/static/fonts/google.ttf);
       }
 
       @font-face {
         font-family: monument;
-        src: url(/AOBT-python/monument.ttf);
+        src: url(/static/fonts/monument.ttf);
       }
 
       @font-face {
         font-family: googlebold;
-        src: url(/AOBT-python/googlebold.ttf);
+        src: url(/static/fonts/googlebold.ttf);
       }
 
       @font-face {
         font-family: nothing;
-        src: url("/AOBT-python/nothing.ttf");
+        src: url('{{ nothing }}') format('truetype');
       }
 
       #main {
         height: 100%;
         width: 65vw;
-        background-image: url(images/braile2.png);
+        /*   background-image: url(/AOBT-python/static/images/braile2.png); */
+        background-color:#363434
       }
 
       /* vinay's changes */
@@ -51,6 +53,8 @@
         width: 100%;
         padding: 0 8px;
         background: #1e1d1d;
+        border-radius: 30px solid black;
+        border-bottom: #1c1b1b 5px solid;
         background: linear-gradient(#1e1d1d, #363434);
         position: fixed;
         overflow: hidden;
@@ -222,15 +226,16 @@
         width: 40vw;
         height: 100vh;
         padding-top: 10vh;
-
+        object-fit: cover;
         overflow: hidden;
         padding-top: 30px;
       }
 
       #left div#h1 {
         font-family: nothing;
-        width: 45vw;
-        font-size: 60px;
+        width: 35vw;
+        height: ;
+        font-size: 80px;
         font-weight: 700;
         margin-bottom: 40px;
         margin-top: 90px;
@@ -367,7 +372,8 @@
           </div>
         </div>
         <div id="center">
-          <img src="images/blindmanequin.png" alt="picture here" />
+           <img src="/static/images/blindmanequin.png" alt="picture here" />
+           <!-- <img src="/static/images/pexels-cottonbro-studio-10176433.jpg"> -->
         </div>
       </div>
     </div>
