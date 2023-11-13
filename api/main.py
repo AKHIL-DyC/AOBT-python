@@ -42,8 +42,8 @@ def home():
 @app.route("/loading", methods=["POST"])
 def loading():
     if request.method == "POST":
-        # We'll use a session object to save the data sent by the user for processing
-        # session["user_data"] = request.form.get("user_data")
+        
+    
         return render_template("loading.html")
 
 
