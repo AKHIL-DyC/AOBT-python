@@ -121,4 +121,4 @@ def news_route():
 
         return render_template('news.html', news=nws)
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
